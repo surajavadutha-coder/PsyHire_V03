@@ -1,24 +1,52 @@
-# Compiled class file
+# Maven build output
+target/
+
+# Maven wrapper (keep these if your project uses Maven Wrapper)
+# .mvn/wrapper/maven-wrapper.jar
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Test reports / generated reports
+surefire-reports/
+failsafe-reports/
+
+# Selenium screenshots generated during tests
+screenshots/
+test-output/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Java compiled files
 *.class
 
-# Log file
-*.log
+# Local environment/configuration files
+.env
+*.local
 
-# BlueJ files
-*.ctxt
+# Local test data
+# Uncomment if these contain sensitive or machine-specific data
+# test-data/local/
+# config/local/
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+# Browser/driver binaries if downloaded/generated locally
+# drivers/
