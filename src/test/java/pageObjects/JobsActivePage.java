@@ -25,6 +25,8 @@ public class JobsActivePage extends BasePage{
 	@FindBy(xpath = "(//img[@alt='grid switcher icon'])[2]/..")
 	WebElement btnList;
 	
+	@FindBy(xpath = "//h1[normalize-space()='Jobs']")
+	WebElement txtJobs;
 //	------------------------------Active-----------------------------------
 	
 	@FindBy(xpath = "//span[normalize-space()='Active']/..")
@@ -64,5 +66,10 @@ public class JobsActivePage extends BasePage{
 		return txtJobTitle.getText();
 	}
 	
-	
+	public boolean isJobsExist() {
+		if(txtJobs.getText().equals("Jobs")) {
+			return true;
+		}
+		return false;
+	}
 }

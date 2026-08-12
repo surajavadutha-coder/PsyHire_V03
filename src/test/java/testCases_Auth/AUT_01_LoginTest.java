@@ -3,7 +3,7 @@ package testCases_Auth;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import pageObjects.DashboardPage;
+import pageObjects.JobsActivePage;
 import pageObjects.LoginPage;
 import testBase.BaseClass;
 
@@ -22,10 +22,9 @@ public class AUT_01_LoginTest extends BaseClass{
 			lp.setOTP("0");
 			lp.clickVerify();
 
-			DashboardPage db = new DashboardPage(driver);
-			boolean target = db.isDashboardexists();
 			
-			Thread.sleep(2000);
+			JobsActivePage jobsA = new JobsActivePage(driver);
+			boolean target = jobsA.isJobsExist();
 			
 			Assert.assertTrue(target);
 			

@@ -28,7 +28,7 @@ public class AUT_07_Logout_clears extends BaseClass{
 			db.clickProfile();
 			db.clickLogout();
 			
-			Thread.sleep(3000);
+			Thread.sleep(1000);
 			
 			
 			Assert.assertTrue(driver.getCurrentUrl().contains("/login"),"User was not redirected to login page after logout");
