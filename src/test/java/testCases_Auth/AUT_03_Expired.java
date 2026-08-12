@@ -20,15 +20,13 @@ public class AUT_03_Expired extends BaseClass{
 			lp.setEmail(p.getProperty("email"));
 			lp.clickSubmit();
 			
-			Thread.sleep(360000);
+			Thread.sleep(310000);
 			lp.setOTP("0");
 			lp.clickVerify();
 		
 			
-			
+			Thread.sleep(500);
 			boolean target = lp.isInvalid();
-			
-			Thread.sleep(2000);
 			
 			Assert.assertTrue(target);
 			

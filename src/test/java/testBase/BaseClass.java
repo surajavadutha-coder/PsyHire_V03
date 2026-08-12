@@ -99,6 +99,9 @@ public class BaseClass {
 	    lp.clickVerify();
 	}
 	
+	public void refreshPage() {
+	    driver.navigate().refresh();
+	}
 //	----------------------------------------------------------------------------------------------------------------------
 	
 	@AfterClass(groups = {"Sanity","Regression","Master","Datadriven"})

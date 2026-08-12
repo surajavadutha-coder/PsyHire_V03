@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import pageObjects.DashboardPage;
+import pageObjects.JobsActivePage;
 import pageObjects.LoginPage;
 import testBase.BaseClass;
 
@@ -23,13 +24,12 @@ public class AUT_06_Page_Refresh extends BaseClass{
 			lp.clickVerify();
 
 			Thread.sleep(2000);
-			DashboardPage db = new DashboardPage(driver);
-			db.refreshPage();
 			
-			boolean target = db.isDashboardexists();
+			refreshPage();
 			
-			Thread.sleep(2000);
-			
+			JobsActivePage jobsA = new JobsActivePage(driver);
+			boolean target = jobsA.isJobsExist();
+	
 			Assert.assertTrue(target);
 			
 			
