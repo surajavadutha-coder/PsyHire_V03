@@ -18,8 +18,10 @@
       	<class name="testCases_Auth.AUT_04_Resend"/>
       	<class name="testCases_Auth.AUT_05_Unregistered_Email"/> 
       	<class name="testCases_Auth.AUT_06_Page_Refresh"/> 
-      	<class name="testCases_Auth.AUT_07_Logout_clears"/> -->
+      	<class name="testCases_Auth.AUT_07_Logout_clears"/> 
       	<class name="testCases_Jobs.Job_01_Create_Job"/> 
+      	<class name="testCases_Jobs.Job_02_Invalid_Job_Creation"/>-->
+      	<class name="testCases_Jobs.Job_03_Validate_JD_Skills"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
