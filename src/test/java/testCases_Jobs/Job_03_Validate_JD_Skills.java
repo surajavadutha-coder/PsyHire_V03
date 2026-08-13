@@ -33,8 +33,8 @@ public class Job_03_Validate_JD_Skills extends BaseClass{
 		              .map(String::trim)
 		              .toList();
 			int target = jbb.isJDRelated(Jobtitle,expectedSkillsList);
-			System.out.println(target);
-			Assert.assertTrue(1<=target);
+//			System.out.println(target);
+			Assert.assertTrue(4<=target);
 			
 		}catch(Exception e) {
 			logger.error(e.getMessage());
