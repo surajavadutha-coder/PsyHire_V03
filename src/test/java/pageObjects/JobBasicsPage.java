@@ -225,7 +225,7 @@ public class JobBasicsPage extends BasePage{
 	
 	@FindBy(xpath = "//div[@class=\"text-[15px] leading-7 text-text-main\"]/p")
 	WebElement txtJDSummary;
-	
+	                  //div[@class='custom-scrollbar flex h-full min-h-0 flex-wrap content-start gap-(--space-3) overflow-y-auto pr-(--space-2)'])/span/span
 	@FindBy(xpath = "(//div[@class='custom-scrollbar flex h-full min-h-0 flex-wrap content-start gap-(--space-3) overflow-y-auto pr-(--space-2)'])/span/span")
 	List<WebElement> txtSkills;
 	
@@ -246,10 +246,13 @@ public class JobBasicsPage extends BasePage{
 		int Count = 0 ;
 		if(getText(txtJDSummary).toLowerCase().contains(jobTitle.toLowerCase())) {
 			for (WebElement skill : txtSkills){
+//				System.out.println(skill.getText());
 				for(String expectedskill:expectedSkills) {
+//					System.out.println(expectedskill);
 					if(getText(skill).contains(expectedskill)) {
+//						System.out.println(skill.getText());
+//						System.out.println(expectedskill);
 						Count++;
-						break;
 					}
 				}
 			}
