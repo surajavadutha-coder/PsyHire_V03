@@ -12,14 +12,14 @@
   	
     <classes>
       <!--<class name="testCases.TC001_AccountRegisterationTest"/> -->
-		<class name="testCases_Auth.AUT_01_LoginTest"/>
+		<!-- <class name="testCases_Auth.AUT_01_LoginTest"/>
       	<class name="testCases_Auth.AUT_02_Invalid_OTP"/> 
       	<class name="testCases_Auth.AUT_03_Expired"/>
-      	<!-- <class name="testCases_Auth.AUT_04_Resend"/>
+      	<class name="testCases_Auth.AUT_04_Resend"/>
       	<class name="testCases_Auth.AUT_05_Unregistered_Email"/> 
       	<class name="testCases_Auth.AUT_06_Page_Refresh"/> 
       	<class name="testCases_Auth.AUT_07_Logout_clears"/> -->
-     <!-- <class name="testCases_Jobs.Job_01_Create_Job"/> -->
+      	<class name="testCases_Jobs.Job_01_Create_Job"/> 
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

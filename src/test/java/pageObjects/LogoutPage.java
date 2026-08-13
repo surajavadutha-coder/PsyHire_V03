@@ -4,13 +4,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class Logout extends BasePage{
+public class LogoutPage extends BasePage{
 
-	public Logout(WebDriver driver) {
+	public LogoutPage(WebDriver driver) {
 		super(driver);
 	}
 	
-	@FindBy(xpath = "//button[@title='admin']")
+	@FindBy(xpath = "//button[@title='bat-man']")
 	WebElement btnProfile;
 	
 	@FindBy(xpath = "//span[normalize-space()='Logout']/..")

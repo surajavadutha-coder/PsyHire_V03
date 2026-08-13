@@ -40,6 +40,9 @@ public class JobsActivePage extends BasePage{
 	
 	@FindBy(xpath = "(//h5)[1]")
 	WebElement txtJobTitle;
+	
+	@FindBy(xpath = "//h3[normalize-space()='Job published to LinkedIn.']")
+	WebElement txtPublishToast;
 //	------------------------------Paused-----------------------------------
 	@FindBy(xpath = "//span[normalize-space()='Paused']/..")
 	WebElement btnPaused;
@@ -62,8 +65,14 @@ public class JobsActivePage extends BasePage{
 		return txtJobID.getText();
 	}
 	
-	public String getJobTitle() {
+	public String getJobTitle() throws InterruptedException {
+		Thread.sleep(500);
 		return txtJobTitle.getText();
+	}
+	
+	public String getPublishToast() throws InterruptedException {
+		Thread.sleep(500);
+		return txtPublishToast.getText();
 	}
 	
 	public boolean isJobsExist() {
