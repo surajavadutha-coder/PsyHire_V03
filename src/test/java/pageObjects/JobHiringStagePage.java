@@ -52,16 +52,30 @@ public class JobHiringStagePage extends BasePage{
 	@FindBy(xpath = "(//span[normalize-space()='Next: Review & Publish'])/..")
 	WebElement btnNextReviewandPublish;
 	
-	
-	public void configureStage(
+	public void RSconfigureStage(
 	        String cutoff,
-	        String team,
-	        String completeWithin)
+	        String team) throws InterruptedException
 	{
 		inpCutoff.clear();
 		sendKeys(inpCutoff,cutoff);
 		click(drpAssignTeam);
+		inpSearchAssignTeam.clear();
 		sendKeys(inpSearchAssignTeam,team);
+		Thread.sleep(500);
+		click(btnFirstAssign);
+	}
+	
+	public void PSconfigureStage(
+	        String cutoff,
+	        String team,
+	        String completeWithin) throws InterruptedException
+	{
+		inpCutoff.clear();
+		sendKeys(inpCutoff,cutoff);
+		click(drpAssignTeam);
+		inpSearchAssignTeam.clear();
+		sendKeys(inpSearchAssignTeam,team);
+		Thread.sleep(500);
 		click(btnFirstAssign);
 		sendKeys(inpCompleteWithin,completeWithin);
 	}
@@ -70,21 +84,25 @@ public class JobHiringStagePage extends BasePage{
 	
 	public void fillHiringStages(String cutoff,
 	        String team,
-	        String completeWithin,
 	        String cutoff2,
 	        String team2,
-	        String completeWithin2) 
+	        String completeWithin2) throws InterruptedException 
 	{
-		configureStage(cutoff,team,completeWithin);
+		RSconfigureStage(cutoff,team);
 		click(togAutoAdvance);
 		click(btnConfirmStage);
 		click(drpAddStage);
 		click(btnPreScreeningCall);
-		configureStage(cutoff2,team2,completeWithin2);
+		PSconfigureStage(cutoff2,team2,completeWithin2);
 		click(togAutoAdvance);
 		click(btnConfirmStage);
+		
+	}
+	
+	public void clickReviewandPublish() {
 		click(btnNextReviewandPublish);
 	}
+	
 	
 //	public void setCutoff(String score) {
 //		inpCutoff.clear();

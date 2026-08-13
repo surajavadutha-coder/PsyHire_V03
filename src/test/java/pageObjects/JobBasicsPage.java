@@ -86,8 +86,8 @@ public class JobBasicsPage extends BasePage{
 	private void searchAndSelect(String value) throws InterruptedException
 	{
 	    WebElement search =
-	            wait.until(
-	                ExpectedConditions.elementToBeClickable(searchBox));
+	            wait.until(ExpectedConditions.refreshed(
+	                ExpectedConditions.elementToBeClickable(searchBox)));
 
 	    search.sendKeys(value);
 	    Thread.sleep(1000);
