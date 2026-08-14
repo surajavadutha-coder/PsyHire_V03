@@ -29,9 +29,7 @@ public class DashboardPage extends BasePage{
 		return false;
 	}
 	
-	public void refreshPage() {
-	    driver.navigate().refresh();
-	}
+	
 	
 	public void clickProfile() {
 		btnProfile.click();

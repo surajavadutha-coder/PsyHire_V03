@@ -23,7 +23,7 @@ public class AUT_05_Unregistered_Email extends BaseClass{
 			Thread.sleep(1000);
 			boolean target = lp.toastUnauthMail();
 			
-			Thread.sleep(1000);
+			
 			
 			Assert.assertTrue(target);
 			

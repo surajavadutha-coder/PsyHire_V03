@@ -8,7 +8,7 @@ import pageObjects.JobCompPage;
 import pageObjects.JobHiringStagePage;
 import pageObjects.JobReviewandPublishPage;
 import pageObjects.JobsActivePage;
-import pageObjects.Logout;
+import pageObjects.LogoutPage;
 import testBase.BaseClass;
 import utilities.DataProviders;
 
@@ -24,11 +24,8 @@ public class Job_01_Create_Job extends BaseClass{
 			
 			login();
 			
-			
 			JobsActivePage jb = new JobsActivePage(driver);
-			
 			jb.clickJobs();
-			
 			jb.clickPostAJob();
 			
 			//------------------------basics page------------------------------
@@ -45,21 +42,21 @@ public class Job_01_Create_Job extends BaseClass{
 			//-----------------------Hiring Stages-----------------------------------
 			JobHiringStagePage HS = new JobHiringStagePage(driver);
 			
-			HS.fillHiringStages("50","test","2","50","test","2");
-			
+			HS.fillHiringStages("50","bala","50","bat-man","2");
+			HS.clickReviewandPublish();
 			
 			//---------------------Review and Publish---------------------------
 			JobReviewandPublishPage RP = new JobReviewandPublishPage(driver);
 			RP.clickPublish();
-			
+			String target = jb.getPublishToast();
 			//---------------------------LogOut---------------------------
-			Logout L = new Logout(driver);
+			LogoutPage L = new LogoutPage(driver);
 			L.Logout();
 			
 			
 			Assert.assertEquals(
-				    jb.getJobTitle(),
-				    Jobtitle,
+				    target,
+				    "Job published to LinkedIn.",
 				    "Job title mismatch"
 				);
 			

@@ -69,6 +69,7 @@ public class LoginPage extends BasePage{
 	}
 	
 	
+	
 	public void clickResend() {
 		btnResend.click();
 	}

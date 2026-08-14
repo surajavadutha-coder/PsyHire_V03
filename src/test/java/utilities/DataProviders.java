@@ -1,6 +1,7 @@
 package utilities;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 import org.testng.annotations.DataProvider;
 
@@ -27,6 +28,50 @@ public class DataProviders {
 		}
 		return jobdata;
 	}
+	
+	@DataProvider(name="JobDataWithoutTitle")
+	public String[][] getDataWithoutTitle() throws IOException
+	{
+		String path = ".\\testData\\JobData.xlsx";
+		
+		ExcelUtility xlutil = new ExcelUtility(path);
+		
+		int totalrows = xlutil.getRowCount("Sheet2");
+		int totalcols = xlutil.getCellCount("Sheet2", 1);
+		
+		String jobdata[][] = new String[totalrows][totalcols];
+		
+		for(int i = 1; i<=totalrows; i++)
+		{
+			for(int j = 0; j<totalcols ; j++)
+			{
+				jobdata[i-1][j] = xlutil.getCellData("Sheet2", i, j);
+			}
+		}
+		return jobdata;
+	}
+	
+	@DataProvider(name="JobandSkillData")
+	public Object[][] getJobSkillsData() throws IOException
+	{
+		String path = ".\\testData\\JobData.xlsx";
+		
+		ExcelUtility xlutil = new ExcelUtility(path);
+		
+		int totalrows = xlutil.getRowCount("Sheet3");
+		int totalcols = xlutil.getCellCount("Sheet3", 1);
+		
+		Object jobandskilldata[][] = new Object[totalrows][totalcols];
+		for(int i = 1; i<=totalrows; i++)
+		{
+			for(int j = 0; j<totalcols ; j++)
+			{
+				jobandskilldata[i-1][j] = xlutil.getCellData("Sheet3", i, j);
+			}
+		}
+		return jobandskilldata;
+	}
+	
 	
 	@DataProvider(name="HiringStageData")
 	public String[][] getHSData() throws IOException
