@@ -7,6 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import pageObjects.JobBasicsPage;
+import pageObjects.JobCompPage;
 import pageObjects.JobsActivePage;
 import testBase.BaseClass;
 import utilities.DataProviders;
@@ -33,7 +34,11 @@ public class Job_03_Validate_JD_Skills extends BaseClass{
 		              .map(String::trim)
 		              .toList();
 			int target = jbb.isJDRelated(Jobtitle,expectedSkillsList);
-//			System.out.println(target);
+			jbb.clickNextCompWhenEnabled();
+			
+			JobCompPage comp = new JobCompPage(driver);
+			comp.clickNextHireWhenEnabled();
+			
 			Assert.assertTrue(4<=target);
 			
 		}catch(Exception e) {
